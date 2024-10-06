@@ -17,7 +17,9 @@ module Ckeditor
       def self.call(input)
         return { data: input[:data] } unless stylesheet_files.include?(input[:filename])
 
-        puts "***** input filename #{input[:filename]}"
+        puts "***** input filename #{input[:filename].inspect}"
+        puts "***** input environment #{input[:environment].inspect}"
+        
         context = input[:environment].context_class.new(input)
         path_prefix = assets_base_path()
         puts "***** path_prefix #{path_prefix.inspect}"
