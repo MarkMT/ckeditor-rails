@@ -20,6 +20,7 @@ module Ckeditor
         puts "***** input filename #{input[:filename].inspect}"
         puts "***** input environment #{input[:environment].inspect}"
         puts "***** context_class #{input[:environment].context_class.inspect}"
+        puts "***** context_class #{input[:environment].context_class.ancestors.inspect}"
         
         context = input[:environment].context_class.new(input)
         puts "***** context #{context.inspect}"
