@@ -27,6 +27,7 @@ module Ckeditor
         matched_folders = input[:filename].match(/\/ckeditor\/(plugins|skins)\/([\w-]+)\//)
 
         data = input[:data].gsub(REGEX) { |_match|
+          puts "***** $1 #{$1.inspect}"
           raw_asset_path = context.asset_path($1)
           puts "***** raw_asset_path #{raw_asset_path.inspect}"
           if raw_asset_path.starts_with?(path_prefix)
