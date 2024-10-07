@@ -22,6 +22,7 @@ module Ckeditor
         puts "***** context_class #{input[:environment].context_class.inspect}"
         
         context = input[:environment].context_class.new(input)
+        puts "***** context #{context.inspect}"
         path_prefix = assets_base_path()
         puts "***** path_prefix #{path_prefix.inspect}"
         matched_folders = input[:filename].match(/\/ckeditor\/(plugins|skins)\/([\w-]+)\//)
