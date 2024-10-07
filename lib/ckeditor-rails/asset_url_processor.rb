@@ -19,6 +19,7 @@ module Ckeditor
 
         puts "***** input filename #{input[:filename].inspect}"
         puts "***** input environment #{input[:environment].inspect}"
+        puts "***** context_class #{input[:environment].context_class.inspect}"
         
         context = input[:environment].context_class.new(input)
         path_prefix = assets_base_path()
