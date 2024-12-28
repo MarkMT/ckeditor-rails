@@ -22,7 +22,7 @@ module Ckeditor
         matched_folders = input[:filename].match(/\/ckeditor\/(plugins|skins)\/([\w-]+)\//)
 
         data = input[:data].gsub(REGEX) { |_match|
-          raw_asset_path = context.asset_path($1)
+          raw_asset_path = context.asset_path($1).gsub(/^#{Regexp.quote(::Rails.application.config.relative_url_root || '')}/, '')
           if raw_asset_path.starts_with?(path_prefix)
             "url(#{raw_asset_path})"
           elsif matched_folders
